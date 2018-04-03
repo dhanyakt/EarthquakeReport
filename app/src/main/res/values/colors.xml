@@ -3,4 +3,8 @@
     <color name="colorPrimary">#2b302e</color>
     <color name="colorPrimaryDark">#707672</color>
     <color name="colorAccent">#a49fa1</color>
+
+    <!-- Background color for app -->
+    <color name="white_background">#fffffd</color>
+
 </resources>
