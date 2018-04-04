@@ -15,7 +15,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
+        android:textAppearance="@android:style/TextAppearance.DeviceDefault.Small"
         android:text="4.2"/>
 
     <TextView
@@ -23,8 +23,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:layout_gravity="center"
-        android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
+        android:textAppearance="@android:style/TextAppearance.DeviceDefault.Small"
         android:text="San Francisco"/>
 
     <TextView
@@ -32,8 +31,14 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:layout_gravity="center"
-        android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
+        android:textAppearance="@android:style/TextAppearance.DeviceDefault.Small"
         android:text="Feb 2, 2018"/>
+
+    <TextView
+        android:id="@+id/time_txt"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="3:00PM"/>
 
 </LinearLayout>

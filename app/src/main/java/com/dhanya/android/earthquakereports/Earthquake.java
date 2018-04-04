@@ -3,7 +3,7 @@ package com.dhanya.android.earthquakereports;
 public class Earthquake {
     private String magnitude;
     private String location;
-    private String date;
+    private long timeInMilliSeconds;
 
 
     /* Constructs a new (@link object)
@@ -11,10 +11,10 @@ public class Earthquake {
      * @param location of the earthquake
      * @param date of the earthquake happened
      */
-    public Earthquake( String magnitude, String location, String date ) {
+    public Earthquake( String magnitude, String location, long timeInMilliSeconds ) {
         this.magnitude = magnitude;
         this.location = location;
-        this.date = date;
+        this.timeInMilliSeconds = timeInMilliSeconds;
     }
 
     /** Returns the magnitude of the earthquake
@@ -31,14 +31,11 @@ public class Earthquake {
         return location;
     }
 
-    /** Returns the date of the earthquake happened
-     *
-     * @return date
-     */
-
-    public String getDate() {
-        return date;
+    public long getTimeInMilliSeconds() {
+        return timeInMilliSeconds;
     }
+
+
 
     @Override
     public String toString() {

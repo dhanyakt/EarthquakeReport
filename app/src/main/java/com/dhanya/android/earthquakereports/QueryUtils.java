@@ -7,7 +7,9 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class QueryUtils {
 
@@ -48,7 +50,7 @@ public class QueryUtils {
 
         String magnitude = "";
         String location = "";
-        String date = "";
+        long timeinmilliseconds = 0L;
         try {
 
             //  Parse the response given by the SAMPLE_JSON_RESPONSE string and
@@ -67,9 +69,10 @@ public class QueryUtils {
                 // Get the jsonObject's property values
                 magnitude = jsonObjectProperties.getString("mag");
                 location = jsonObjectProperties.getString("place");
-                date  = jsonObjectProperties.getString("time");
+                timeinmilliseconds  = jsonObjectProperties.getLong("time");
+
                 // add earthquake object  to  ArrayList<Earthquake>
-                earthquakes.add(new Earthquake(magnitude,location,date));
+                earthquakes.add(new Earthquake(magnitude,location, timeinmilliseconds));
             }
 
         } catch (JSONException e) {
@@ -82,5 +85,6 @@ public class QueryUtils {
         // Return the list of earthquakes
         return earthquakes;
     }
+
 
 }
