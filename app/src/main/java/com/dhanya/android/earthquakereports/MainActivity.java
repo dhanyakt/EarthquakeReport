@@ -14,12 +14,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-        // Create a arraylist of earthquake object ie data source
-        ArrayList<Earthquake> earthquakes = new ArrayList<Earthquake>();
-        earthquakes.add(new Earthquake("4.2", "San Francisco", "Feb 2 2018"));
-        earthquakes.add(new Earthquake("4.2", "San Dieago", "Feb 2 2018"));
-        earthquakes.add(new Earthquake("4.2", "Rio De Genario", "Feb 2 2018"));
-        earthquakes.add(new Earthquake("4.2", "Utah", "Feb 2 2018"));
+        // Calling extractEarthquakes from QueryUtils for earthquake objects
+        ArrayList<Earthquake> earthquakes = QueryUtils.extractEarthquakes();
 
         // Create an {@link EarthquakeAdapter}, whose data source is a list of
         // {@link Earthquake}s. The adapter knows how to create list item views for each item
