@@ -24,7 +24,15 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:textAppearance="@android:style/TextAppearance.DeviceDefault.Small"
-        android:text="San Francisco"/>
+        android:text="10 Km N of"/>
+
+    <TextView
+        android:id="@+id/location_detail_txt"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textAppearance="@android:style/TextAppearance.DeviceDefault.Small"
+        android:text="San Francisco" />
 
     <TextView
         android:id="@+id/date_txt"
