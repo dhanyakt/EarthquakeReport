@@ -1,18 +1,17 @@
 package com.dhanya.android.earthquakereports;
 
 import android.app.Activity;
-import android.content.Context;
-import android.text.format.DateUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
+import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
+
 
 public class EarthquakeAdapter extends ArrayAdapter {
 
@@ -55,9 +54,11 @@ public class EarthquakeAdapter extends ArrayAdapter {
         String dateFormat = formatDate(dateObject);
         // Format the time string (i.e. "4:30PM")
         String timeFormat = formatTime(dateObject);
+        // Format the magnitude to show 1 decimal place
+        String magOutput = formatMagnitude(currentEarthquake.getMagnitude());
 
         // Populate the data into the template view using the data object
-        magnitude_textView.setText(currentEarthquake.getMagnitude());
+        magnitude_textView.setText(magOutput);
         // location_textView.setText(currentEarthquake.getLocation());
         String[] locationDetails = getLocationDetails(currentEarthquake.getLocation());
         location_textView.setText(locationDetails[ 0 ]);
@@ -67,6 +68,18 @@ public class EarthquakeAdapter extends ArrayAdapter {
 
         // Return the completed view to render on screen
         return convertView;
+    }
+
+    /**
+     * Return the formatted magnitude string showing 1 decimal place (i.e. "3.2")
+     * from a decimal magnitude value.
+     */
+
+    private String formatMagnitude( double magnitude ) {
+        DecimalFormat decimalFormat = new DecimalFormat("0.0");
+        String formattedOutput = decimalFormat.format(magnitude);
+        return formattedOutput;
+
     }
 
     private String[] getLocationDetails( String location ) {
@@ -106,7 +119,6 @@ public class EarthquakeAdapter extends ArrayAdapter {
         SimpleDateFormat dateFormat = new SimpleDateFormat("MMM DD, yyyy");
         return dateFormat.format(dateObject);
     }
-
 
 }
 

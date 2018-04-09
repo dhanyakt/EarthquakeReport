@@ -1,15 +1,12 @@
 package com.dhanya.android.earthquakereports;
 
-import android.provider.Settings;
-import android.util.Log;
 
+import android.util.Log;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
+
 
 public class QueryUtils {
 
@@ -48,7 +45,7 @@ public class QueryUtils {
         // is formatted, a JSONException exception object will be thrown.
         // Catch the exception so the app doesn't crash, and print the error message to the logs.
 
-        String magnitude = "";
+        double magnitude = 0.0d;
         String location = "";
         long timeinmilliseconds = 0L;
         try {
@@ -67,7 +64,7 @@ public class QueryUtils {
                 // Get the jsonObject name "properties"
                 JSONObject jsonObjectProperties = jsonObject.getJSONObject("properties");
                 // Get the jsonObject's property values
-                magnitude = jsonObjectProperties.getString("mag");
+                magnitude = jsonObjectProperties.getDouble("mag");
                 location = jsonObjectProperties.getString("place");
                 timeinmilliseconds  = jsonObjectProperties.getLong("time");
 
