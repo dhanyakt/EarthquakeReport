@@ -4,6 +4,7 @@ public class Earthquake {
     private double magnitude;
     private String location;
     private long timeInMilliSeconds;
+    private String url;
 
 
     /* Constructs a new (@link object)
@@ -11,10 +12,11 @@ public class Earthquake {
      * @param location of the earthquake
      * @param date of the earthquake happened
      */
-    public Earthquake( double magnitude, String location, long timeInMilliSeconds ) {
+    public Earthquake( double magnitude, String location, long timeInMilliSeconds,String url ) {
         this.magnitude = magnitude;
         this.location = location;
         this.timeInMilliSeconds = timeInMilliSeconds;
+        this.url = url;
     }
 
     /**
@@ -35,6 +37,10 @@ public class Earthquake {
 
     public long getTimeInMilliSeconds() {
         return timeInMilliSeconds;
+    }
+
+    public String getUrl() {
+        return url;
     }
 
     @Override

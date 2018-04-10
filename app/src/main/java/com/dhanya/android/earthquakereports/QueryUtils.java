@@ -48,6 +48,7 @@ public class QueryUtils {
         double magnitude = 0.0d;
         String location = "";
         long timeinmilliseconds = 0L;
+        String url = "";
         try {
 
             //  Parse the response given by the SAMPLE_JSON_RESPONSE string and
@@ -67,9 +68,10 @@ public class QueryUtils {
                 magnitude = jsonObjectProperties.getDouble("mag");
                 location = jsonObjectProperties.getString("place");
                 timeinmilliseconds  = jsonObjectProperties.getLong("time");
+                url= jsonObjectProperties.getString("url");
 
                 // add earthquake object  to  ArrayList<Earthquake>
-                earthquakes.add(new Earthquake(magnitude,location, timeinmilliseconds));
+                earthquakes.add(new Earthquake(magnitude,location, timeinmilliseconds,url));
             }
 
         } catch (JSONException e) {
