@@ -9,10 +9,12 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
+import java.text.DateFormat;
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 
 public class EarthquakeAdapter extends ArrayAdapter {
@@ -173,7 +175,7 @@ public class EarthquakeAdapter extends ArrayAdapter {
      * Return the formatted date string (i.e. "Mar 3, 1984") from a Date object.
      */
     private String formatDate( Date dateObject ) {
-        SimpleDateFormat dateFormat = new SimpleDateFormat("MMM DD, yyyy");
+         SimpleDateFormat dateFormat = new SimpleDateFormat("MMM DD, yyyy");
         return dateFormat.format(dateObject);
     }
 
