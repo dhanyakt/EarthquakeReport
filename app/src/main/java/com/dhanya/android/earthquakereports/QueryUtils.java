@@ -42,6 +42,8 @@ public class QueryUtils {
      * parsing a JSON response.
      */
     public static List<Earthquake> fetchEarthquakeData( String requestUrl ) {
+        Log.i(TAG,"Fetching the earthquake data by parsing the json results from the internet.....");
+
 
         // Create URL object
         URL url = createUrl(requestUrl);
@@ -169,7 +171,6 @@ public class QueryUtils {
             // Looping through json "features" array
             for ( int i = 0; i < length; i++ ) {
                 JSONObject jsonObject = jsonArray.getJSONObject(i);
-                System.out.println(jsonObject);
                 // Get the jsonObject name "properties"
                 JSONObject jsonObjectProperties = jsonObject.getJSONObject("properties");
                 // Get the jsonObject's property values
